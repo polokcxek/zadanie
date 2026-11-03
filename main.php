@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
             echo "Witaj, <strong>{$_SESSION['username']}</strong>";
             ?>
         </p>
-        <p><a href="wyloguj.php">Wyloguj</a></p>
+        <p><a href="logout.php">Wyloguj</a></p>
     </header>
     <main>
         <h2>Wyniki pacjentów</h2>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['username'])) {
                     <th>Wynik</th>
                 </tr>
                 <?php
-                $connect = mysqli_connect('localhost', 'root', '', 'laboratorium');
+                $connect = mysqli_connect('localhost', 'root', 'root', 'laboratorium');
                 $query4 = "SELECT imie, nazwisko, pesel, Zlecenie.data, Wynik.data, plik FROM Pacjent JOIN Zlecenie ON Zlecenie.idPacjenta = Pacjent.id LEFT JOIN Wynik ON Zlecenie.id = Wynik.idZlecenia;";
                 $result = mysqli_query($connect, $query4);
                 while ($row = mysqli_fetch_array($result)) {
