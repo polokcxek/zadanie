@@ -29,7 +29,7 @@ session_start();
         if (isset($_POST['submit'])) {
             if ($_POST['login'] == 'admin' && $_POST['haslo'] == 'TajneHaslo321*') {
                 $_SESSION['username'] = 'admin';
-                header('location: wyniki.php');
+                header('location: main.php');
                 exit();
             }
         }
